@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthing/core";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +32,7 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           {children}
           <Toaster />
         </ThemeProvider>

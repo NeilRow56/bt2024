@@ -99,7 +99,15 @@ export default function CreateProductPage() {
 
             <div className="flex flex-col gap-3">
               <Label>Images</Label>
-              <UploadDropzone endpoint="imageUploader" />
+              <UploadDropzone
+                endpoint="imageUploader"
+                onClientUploadComplete={(res) => {
+                  alert("Finished uploading");
+                }}
+                onUploadError={() => {
+                  alert("Something went wrong");
+                }}
+              />
             </div>
           </div>
         </CardContent>
