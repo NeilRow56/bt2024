@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
+import { UploadDropzone } from "@/lib/uploadthing";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -98,7 +99,7 @@ export default function CreateProductPage() {
 
             <div className="flex flex-col gap-3">
               <Label>Images</Label>
-              <input type="hidden" />
+              <UploadDropzone endpoint="imageUploader" />
             </div>
           </div>
         </CardContent>
