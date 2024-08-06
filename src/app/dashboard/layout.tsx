@@ -16,6 +16,7 @@ import {
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default async function DashboardLayout({
   children,
@@ -30,9 +31,10 @@ export default async function DashboardLayout({
   }
   return (
     <div className="flex flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white">
+      <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b ">
         <nav className="hidden font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <DashboardNavigation />
+          <ThemeToggle />
         </nav>
         <Sheet>
           <SheetTrigger asChild>
